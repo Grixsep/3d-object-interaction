@@ -1,5 +1,7 @@
 // Basic Three.js setup
 const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xADD8E6); // Set background color to light blue
+
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
