@@ -15,12 +15,13 @@ scene.add(directionalLight);
 
 // Load the .obj model
 const loader = new THREE.OBJLoader();
-loader.load('shuttle.obj', function (object) {
-  scene.add(object);
+loader.load('models/shuttle1.obj', function (object) {
+    scene.add(object);
+    object.position.y = -0.5; // Adjust position if needed
 }, function (xhr) {
-  console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+    console.log((xhr.loaded / xhr.total * 100) + '% loaded');
 }, function (error) {
-  console.error('An error happened', error);
+    console.error('An error happened', error);
 });
 
 // Camera position
@@ -28,16 +29,16 @@ camera.position.z = 5;
 
 // Render loop
 function animate() {
-  requestAnimationFrame(animate);
-  renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
 }
 animate();
 
 // Responsive design
 window.addEventListener('resize', () => {
-  const width = window.innerWidth;
-  const height = window.innerHeight;
-  renderer.setSize(width, height);
-  camera.aspect = width / height;
-  camera.updateProjectionMatrix();
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    renderer.setSize(width, height);
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
 });
