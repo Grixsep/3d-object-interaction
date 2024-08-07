@@ -5,9 +5,7 @@ scene.background = new THREE.Color(0xADD8E6); // Set background color to light b
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
-//renderer.shadowMap.enabled = false; // Disable shadow map
 document.body.appendChild(renderer.domElement);
-
 
 // Lighting
 const ambientLight = new THREE.AmbientLight(0x404040);
@@ -15,7 +13,7 @@ scene.add(ambientLight);
 
 const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
 directionalLight.position.set(1, 1, 1).normalize();
-//directionalLight.castShadow = false; // Ensure no shadows are cast
+directionalLight.castShadow = false; // Ensure no shadows are cast
 scene.add(directionalLight);
 
 // Load the .obj model
@@ -44,8 +42,8 @@ const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true; // Enable damping (inertia)
 controls.dampingFactor = 0.3;
 controls.screenSpacePanning = false; // Disable panning
-controls.minDistance = 5; // Minimum zoom distance
-controls.maxDistance = 100; // Maximum zoom distance
+controls.minDistance = 10; // Minimum zoom distance
+controls.maxDistance = 70; // Maximum zoom distance
 
 // Render loop
 function animate() {
