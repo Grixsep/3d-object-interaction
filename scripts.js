@@ -15,7 +15,7 @@ scene.add(directionalLight);
 
 // Load the .obj model
 const loader = new THREE.OBJLoader();
-loader.load('models/shuttle.obj', function (object) {
+loader.load('shuttle.obj', function (object) {
   scene.add(object);
 }, function (xhr) {
   console.log((xhr.loaded / xhr.total * 100) + '% loaded');
