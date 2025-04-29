@@ -1,4 +1,6 @@
 # 3D Object Interaction
+[![Demo](https://img.shields.io/badge/Demo-Live-green?style=for-the-badge&logo=github)](https://grixsep.github.io/3d-object-interaction/)
+
 
 > ✅ **Completed Project**  
 > This project has been archived as it achieved its intended goals. No further updates are planned.
